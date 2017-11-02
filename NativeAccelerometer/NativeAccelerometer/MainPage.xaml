@@ -12,22 +12,26 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <Label  Grid.Row="1" Grid.Column="0" HorizontalOptions="End"   Text="Device : " />
-        <Label  Grid.Row="2" Grid.Column="0" HorizontalOptions="End"   Text="Sensor : " />
-        <Label  Grid.Row="3" Grid.Column="0" HorizontalOptions="End"   Text="length : " />
-        <Button Grid.Row="4" Grid.Column="0" HorizontalOptions="End"   Text="Start" x:Name="ButtonStart" />
+        <Label  Grid.Row="1" Grid.Column="0" HorizontalOptions="End"   Text="  Device : " />
+        <Label  Grid.Row="2" Grid.Column="0" HorizontalOptions="End"   Text="       X : " />
+        <Label  Grid.Row="3" Grid.Column="0" HorizontalOptions="End"   Text="       Y : " />
+        <Label  Grid.Row="4" Grid.Column="0" HorizontalOptions="End"   Text="       Z : " />
+        <Label  Grid.Row="5" Grid.Column="0" HorizontalOptions="End"   Text="Interval : " />
+        <Button Grid.Row="6" Grid.Column="0" HorizontalOptions="End"   Text="Start" x:Name="ButtonStart" />
         <Label  Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" Text="None." x:Name="LabelDeviceName" />
-        <Label  Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="None." x:Name="LabelSensorName" />
-        <Label  Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="0.00m" x:Name="LabelLength" />
-        <Button Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" Text="Stop"  x:Name="ButtonStop" />
-        <Button Grid.Row="4" Grid.Column="2" HorizontalOptions="Start" Text="Clear" x:Name="ButtonClear" />
+        <Label  Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="0.000" x:Name="LabelX" />
+        <Label  Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="0.000" x:Name="LabelY" />
+        <Label  Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" Text="0.000" x:Name="LabelZ" />
+        <Label  Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" Text="0.000" x:Name="LabelInterval" />
+        <Button Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" Text="Stop"  x:Name="ButtonStop" />
 
     </Grid>
 

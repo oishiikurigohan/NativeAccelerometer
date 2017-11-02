@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26823.1
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAccelerometer.Android", "NativeAccelerometer\NativeAccelerometer.Android\NativeAccelerometer.Android.csproj", "{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}"
 EndProject
@@ -47,8 +47,6 @@ Global
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhone.Deploy.0 = Debug|Any CPU
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{1EB13749-0B6F-46E7-93E7-42B472CDD2F6}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
@@ -95,7 +93,8 @@ Global
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.AppStore|iPhone.Build.0 = AppStore|iPhoneSimulator
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
-		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|iPhone.Build.0 = Debug|iPhone
 		{FD592F68-5FA2-4E19-9569-82B78DA78D84}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator

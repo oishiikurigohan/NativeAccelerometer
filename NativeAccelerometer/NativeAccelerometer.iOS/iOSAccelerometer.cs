@@ -1,24 +1,52 @@
-﻿using UIKit;
+﻿using CoreMotion;
+using Foundation;
+using UIKit;
+using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(NativeAccelerometer.iOS.iOSAccelerometer))]
+[assembly: Dependency(typeof(NativeAccelerometer.iOS.iOSAccelerometer))]
 
 namespace NativeAccelerometer.iOS
 {
     public class iOSAccelerometer : INativeAccelerometer
     {
-        public string LinearAccelerationSensorName { get; private set; }
+        private CMMotionManager motionManager;
+        private double prevTimeStamp;
+
         public string MobileDeviceName { get; private set; }
-        public double Length { get; private set; }
+        public event AccelerometerEventHandler AccelerationReceived;
 
         public iOSAccelerometer()
         {
+            motionManager = new CMMotionManager();
             MobileDeviceName = UIDevice.CurrentDevice.SystemName + " " + UIDevice.CurrentDevice.SystemVersion + " " + UIDevice.CurrentDevice.Model;
-            LinearAccelerationSensorName = "";
-            Length = 0;
         }
 
-        public void Start() { }
-        public void Stop() { }
-        public void Clear() { }
+        public void Start()
+        {
+            if (motionManager.AccelerometerAvailable)
+            {
+                motionManager.AccelerometerUpdateInterval = 0.005;
+                motionManager.StartAccelerometerUpdates( NSOperationQueue.CurrentQueue, (data, error) =>
+                {
+                    // センサの取得間隔を取得(sec)
+                    // CMAccelerometerData.Timestamp : デバイスが起動してからの秒単位の時間
+                    double nowTimeStamp = data.Timestamp;
+                    double interval = (prevTimeStamp != 0) ? (nowTimeStamp - prevTimeStamp) : 0;
+                    prevTimeStamp = nowTimeStamp;
+
+                    AccelerationReceived(this, new AccelerometerEventArgs {
+                        X = data.Acceleration.X,
+                        Y = data.Acceleration.Y,
+                        Z = data.Acceleration.Z,
+                        Interval = interval });
+                });
+            }
+        }
+
+        public void Stop()
+        {
+            motionManager.StopAccelerometerUpdates();
+            prevTimeStamp = 0;
+        }
     }
 }
